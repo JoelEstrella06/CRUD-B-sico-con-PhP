@@ -13,16 +13,16 @@
             <i class="fa-solid fa-circle-user"></i>
             <h2 class="Main__tittle__text">Loging</h2>
         </div>
-        <form method="post" action="main.php" class="form__loging">
+        <form id="form__loging" method="post" action="main.php" class="form__loging">
             <label>
                 <p>Nombre de usuario</p>
-                <input type="text" name="User" required>
+                <input type="text" name="User" required placeholder="User Name" class="form__loging__input">
             </label>
             <label>
                 <p>Password</p>
-                <input type="password" name="password" required>
+                <input type="password" name="password" required placeholder="*****" class="form__loging__input">
             </label>
-            <button>Entrar</button>
+            <button class="btn__loging">Entrar <i class="fa-solid fa-right-to-bracket"></i></button>
         </form>
     </main>
     <script src="https://kit.fontawesome.com/49b3e079cc.js" crossorigin="anonymous"></script>

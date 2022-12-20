@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600&display=swap');
 :root{
 	--rojo:#da0000ee;
 	--blanco:#eeee;
 	--naranja:#e46a07; 
 	--verde:#9ABBAC;
 	--azul:#2496d8; 
+    --azul_fuerte:#1073ac;
+    --gris_bajo:#e6e6e6;
+    --gris:#c2bdbd; 
 }
 *{
 	margin: 0px;
@@ -14,13 +18,17 @@ html{
 	font-size: 62.5%; /*1rem =10px ahora*/
 }
 main{
-    border: 0.2rem gray solid;
+    width:min(30rem, 32rem);
+    font-family: 'Noto Sans', sans-serif;
     border-radius: 1rem;
     font-size: 1.8rem;
-    margin:20rem auto 0rem;
     padding: 3.5rem;
     gap: 1.2rem;
-    width: min(25rem, 32rem);
+    box-shadow:0rem 0rem 3rem #e6e6e6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 main,.main__tittle{
     display: flex;
@@ -37,4 +45,32 @@ main,.main__tittle{
 }
 .main__tittle__text{
     font-size: 2rem;
+}
+.form__loging{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    
+    font-size: 1.6rem;
+}
+.form__loging__input{
+    width: 100%;
+    height: 4rem;
+    padding: 2rem 1rem;
+    border: 0px black solid;
+    border-bottom: 0.15rem black solid;;
+   
+}
+.btn__loging{
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--blanco);
+    border:0;
+    background-color: var(--azul);
+    transition: background-color 0.5s;
+}
+.btn__loging:hover{
+    background-color: var(--azul_fuerte);
 }
