@@ -5,11 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <head>Loging</head>
-    <main>
-        <form method="post" action="main.php">
+    <main> 
+        <div class="main__tittle">
+            <i class="fa-solid fa-circle-user"></i>
+            <h2 class="Main__tittle__text">Loging</h2>
+        </div>
+        <form method="post" action="main.php" class="form__loging">
             <label>
                 <p>Nombre de usuario</p>
                 <input type="text" name="User" required>
@@ -21,6 +25,6 @@
             <button>Entrar</button>
         </form>
     </main>
-    
+    <script src="https://kit.fontawesome.com/49b3e079cc.js" crossorigin="anonymous"></script>
 </body>
 </html>

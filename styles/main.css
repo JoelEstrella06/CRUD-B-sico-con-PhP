@@ -1,0 +1,40 @@
+:root{
+	--rojo:#da0000ee;
+	--blanco:#eeee;
+	--naranja:#e46a07; 
+	--verde:#9ABBAC;
+	--azul:#2496d8; 
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+html{
+	font-size: 62.5%; /*1rem =10px ahora*/
+}
+main{
+    border: 0.2rem gray solid;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    margin:20rem auto 0rem;
+    padding: 3.5rem;
+    gap: 1.2rem;
+    width: min(25rem, 32rem);
+}
+main,.main__tittle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main__tittle{
+    text-align: center;
+    gap: 1rem;
+}
+.main__tittle i{
+    font-size: 6rem;
+    color: var(--azul);
+}
+.main__tittle__text{
+    font-size: 2rem;
+}
