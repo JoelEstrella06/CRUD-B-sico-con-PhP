@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="tu-pagina-de-destino.html" method="get" onsubmit="return encodePassword()">
+        <label for="text-field">Campo de texto:</label><br>
+        <input type="text" id="text-field" name="text-field"><br>
+        <br>
+        <label for="password-field">Campo de contraseña:</label><br>
+        <input type="password" id="password-field" name="password-field"><br>
+        <br>
+        <input type="submit" value="Enviar">
+      </form>
+      
+      <script>
+        function stringToMD5(string) {
+          // Usa la función TextEncoder para codificar la cadena a bytes
+          const encoder = new TextEncoder();
+          const data = encoder.encode(string);
+      
+          // Usa la función crypto.subtle.digest para calcular el resumen de la cadena
+          return crypto.subtle.digest("MD5", data).then(hash => {
+            // Convierte el resumen (en formato ArrayBuffer) a formato hexadecimal
+            const hex = Array.prototype.map.call(new Uint8Array(hash), x => ('00' + x.toString(16)).slice(-2)).join('');
+            return hex;
+          });
+        }
+      
+        function encodePassword() {
+          // Obtén el valor del campo de contraseña
+          const passwordField = document.getElementById("password-field");
+          const password = passwordField.value;
+      
+          // Convierte el valor a formato MD5 usando la función stringToMD5()
+          stringToMD5(password).then(hex => {
+            // Modifica el valor del campo de contraseña con el valor en formato MD5
+            passwordField.value = hex;
+          });
+      
+          // Devuelve false para evitar que el formulario se envíe hasta que se haya resuelto la promesa
+          return false;
+        }
+      </script>
+      
+      
+</body>
+</html>

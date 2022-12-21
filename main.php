@@ -11,32 +11,41 @@ $contraseña=$_POST["password"];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link href="styles/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <main>
+    <main class="main__dashboard">
         <?php
         $resUser=buscarUsuario($usuario, $contraseña);
         if(!$resUser){
            
-            echo ("<h2>Usuario o contraseña incorrectos</h2>");
+            echo ("
+            <div class='dashboard__tittle'>
+                <h2>Usuario o contraseña incorrectos</h2>
+            </div>
+            ");
         }
         else{
              echo("
-                <h2>buenvenido $resUser</h2>
-                <div>
-                    <div>
+                <div class='dashboard__tittle'>
+                    <h2>Bienvenido $resUser</h2>
+                </div>                
+                <div class='dashboard__options'>
+                    <div class='dashboard__tittle'>
                         <p>¿Qué desea realizar?</p>
                     </div>
-                    <a href='usuarios.php'>Catálogo de usuarios</a>
-                    <a href='productos.php'>Catálogo de Productos</a>
-                    <a href=''>Actualizar Producto</a>
-                    <a href=''>Eliminar Producto</a>
+                    <div class='dashboard__links'>
+                        <a href='usuarios.php'><i class='fa-solid fa-users'></i> Usuarios</a>
+                        <a href='productos.php'><i class='fa-solid fa-boxes-stacked'></i> Productos</a>
+                        <a href=''><i class='fa-solid fa-arrows-rotate'></i> Actualizar Producto</a>
+                        <a href=''><i class='fa-solid fa-trash-can'></i> Eliminar Producto</a>
+                    </div>                   
                 </div>
              ");
         }
         ?>
     </main>
-    
+    <script src="https://kit.fontawesome.com/49b3e079cc.js" crossorigin="anonymous"></script>
 </body>
 </html>

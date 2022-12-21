@@ -14,15 +14,23 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+}
 html{
 	font-size: 62.5%; /*1rem =10px ahora*/
 }
-main{
+.main__card{
     width:min(30rem, 32rem);
+}
+.main__card,.main__dashboard{
     font-family: 'Noto Sans', sans-serif;
     border-radius: 1rem;
     font-size: 1.8rem;
     padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 1.2rem;
     box-shadow:0rem 0rem 3rem #e6e6e6;
     position: absolute;
@@ -30,7 +38,7 @@ main{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-main,.main__tittle{
+.main__card,.main__tittle{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,4 +81,32 @@ main,.main__tittle{
 }
 .btn__loging:hover{
     background-color: var(--azul_fuerte);
+}
+.dashboard__tittle{
+    text-align: center;
+}
+
+.dashboard__links{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+.dashboard__links a{
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-radius: 5px;
+    color: var(--blanco);
+    background-color: var(--azul_fuerte);
+    transition: background-color 0.5s, transform 0.5s;
+}
+.dashboard__links a:hover{
+    background-color: var(--azul);
+    transform: scale(1.1);
+}
+.dashboard__links a i{
+    font-size: 2.2rem;
 }
