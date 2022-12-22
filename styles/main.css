@@ -122,14 +122,14 @@ html{
     padding: 1rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
 .User__card,.product__card{
     
     border-radius: 1rem;
-    width: min(35rem,100%);
+    width: min(35rem, 40rem);
     font-size: 1.4rem;
     display: flex;
     padding: 1.5rem;
@@ -165,6 +165,7 @@ html{
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-wrap:anywhere;
 }
 .user__info p b,.product__info p b{
     font-size: 1.6rem;
