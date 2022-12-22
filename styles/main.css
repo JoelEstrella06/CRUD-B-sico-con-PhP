@@ -97,6 +97,7 @@ html{
 
 .dashboard__links a{
     text-align: center;
+    min-width: 25rem;
     padding: 1.2rem 1rem;
     border-radius: 5px;
     color: var(--blanco);
@@ -109,4 +110,62 @@ html{
 }
 .dashboard__links a i{
     font-size: 2.2rem;
+}
+.Tittle__General{
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    padding: 1rem;
+    font-size: 3.2rem;
+}
+.user__container,.products__container{
+    font-family: 'Noto Sans', sans-serif;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.User__card,.product__card{
+    
+    border-radius: 1rem;
+    width: min(35rem,100%);
+    font-size: 1.4rem;
+    display: flex;
+    padding: 1.5rem;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:0rem 0rem 2rem #e6e6e6;
+}
+.User__card__layout,.product__card__layout { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+}
+.User__card__layout .fa-circle-user,.product__card__layout .fa-box{
+    font-size: 4.5rem;
+    color: var(--azul_fuerte);
+}
+.user__card--delete{
+    font-size: 2rem;
+    border: 0;
+    color: var(--blanco);
+    background-color: var(--azul);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.user__info,.product__info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.user__info p b,.product__info p b{
+    font-size: 1.6rem;
 }

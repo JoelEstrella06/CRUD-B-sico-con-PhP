@@ -64,9 +64,19 @@ function datauser($query){
     $template = "";
     while($fila=mysqli_fetch_array($query)){
         $template .= "
-        <div>
-            <p>ID-". $fila['id_user'] ." Usuario-" . $fila['user'] . "</p>
-            <p>Nombre-" . $fila['user'] . "</p>
+        <div class='User__card'>
+                <div class='User__card__layout'>
+               
+                    <div>
+                        <i class='fa-solid fa-circle-user'></i>
+                    </div>
+                    <div class='user__info'>
+                        <p><b>ID:</b> ". $fila['id_user'] ."</p>
+                        <p><b>Nombre de suario:</b> " . $fila['user'] ." </p>
+                        <p><b>Nombre:</b> " . $fila['user'] . "</p>
+                    </div>     
+                </div>
+                <button class='user__card--delete' type='button'><i class='fa-solid fa-trash'></i></button>                     
         </div>";
     }
     return $template;
@@ -75,11 +85,21 @@ function dataProductos($query){
     $template = "";
     while($fila=mysqli_fetch_array($query)){
         $template .= "
-        <div>
-            <p>ID-Producto ". $fila['id'] ."</p>
-            <p>Producto- " . $fila['nombre_producto'] ." Precio. ".$fila['precio']. "</p>
-            <p>Descripción<br>" . $fila['descripcion'] . "</p>
-            <p>Inventario" . $fila['inventario'] . "</p>
+        <div class='product__card'>
+            <div class='product__card__layout'>
+                <div>
+                    <i class='fa-solid fa-box'></i>
+                </div>
+                <div class='product__info'>
+                    <p><b>ID del Producto:</b> ". $fila['id'] ."</p>
+                    <p><b>Producto:</b> " . $fila['nombre_producto'] ."</p>
+                    <p><b>Precio:</b> " . $fila['precio'] . "</p>
+                    <p><b>Descripción:</b><br>" . $fila['descripcion'] . "</p>
+                    <p><b>Inventario:</b> " . $fila['inventario'] . "</p>
+                </div>
+            </div>
+            
+            <button class='user__card--delete' type='button'><i class='fa-solid fa-trash'></i></button>
         </div>";
     }
     return $template;
