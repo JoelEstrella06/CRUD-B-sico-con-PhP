@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("scripts/conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,9 +19,11 @@ include("conexion.php");
         echo MostrarProductos();
         ?>
     </main>
+    <div id="addProduct" class="button__add__product">
+        <i class="fa-solid fa-plus"></i>
+    </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/49b3e079cc.js" crossorigin="anonymous"></script>
-<script src="scripts/main.js">
-    
-</script>
+<script src="scripts/main.js"></script>
 </html>

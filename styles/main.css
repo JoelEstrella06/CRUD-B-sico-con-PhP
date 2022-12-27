@@ -152,12 +152,22 @@ html{
     color: var(--azul_fuerte);
 }
 .user__card--delete{
+    cursor: pointer;
+    border: 0.1rem var(--azul) solid;
     font-size: 2rem;
-    border: 0;
     color: var(--blanco);
     background-color: var(--azul);
     padding: 1rem;
     border-radius: 0.5rem;
+    transition: all 0.5s;
+}
+.user__card--delete:hover{
+    background-color: var(--azul_fuerte);
+}
+.user__card--delete:active{
+    border: 0.1rem #c5c5c5 solid;
+    background-color: white;
+    color: var(--azul_fuerte);
 }
 .user__info,.product__info{
     display: flex;
@@ -169,4 +179,24 @@ html{
 }
 .user__info p b,.product__info p b{
     font-size: 1.6rem;
+}
+.button__add__product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    font-size: 3rem;
+    padding: 1rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--rojo);
+    color: white;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.button__add__product:hover{
+    background-color: var(--naranja);
 }

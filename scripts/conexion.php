@@ -53,11 +53,13 @@ function SelectProducto($query)
 }
 
 function EliminarProducto($id){
-    $sentencia="DELETE FROM productos WHERE id='.$id.'";
+    $sentencia="DELETE FROM productos WHERE id='$id'";
+    //echo ($sentencia);
     $res = Conexion($sentencia);
-    if($res && mysqli_num_rows($res)>0){
+    /*if($res>0){
         echo ("Se eliminó correctamente");
-    }
+    }*/
+    return $res;
 }
 
 function datauser($query){
@@ -76,7 +78,7 @@ function datauser($query){
                         <p><b>Nombre:</b> " . $fila['user'] . "</p>
                     </div>     
                 </div>
-                <button class='user__card--delete' type='button'><i class='fa-solid fa-trash'></i></button>                     
+                <button class='user__card--delete' type='button' onclick='Delete(". $fila['id_user'] .", 'user')'><i class='fa-solid fa-trash'></i></button>                     
         </div>";
     }
     return $template;
@@ -99,9 +101,14 @@ function dataProductos($query){
                 </div>
             </div>
             
-            <button class='user__card--delete' type='button'><i class='fa-solid fa-trash'></i></button>
+            <button class='user__card--delete' type='button' onclick='DeleteProduct(". $fila['id'] .")'><i class='fa-solid fa-trash'></i></button>
         </div>";
     }
     return $template;
+}
+function sum() {
+    $a=$_POST["a"];
+    $b=$_POST["b"];
+    return $a + $b;
 }
 ?>
