@@ -35,6 +35,14 @@ function   MostrarUsuarios(){
         
     }
 }
+function ListarUsuarios(){
+    $sentencia = "SELECT * FROM usuarios";
+    $res = Conexion($sentencia);
+    if($res && mysqli_num_rows($res)>0){
+        return OptionsUsuarios($res);
+        
+    }
+}
 function   MostrarProductos(){
     $sentencia = "SELECT * FROM productos";
     $res = Conexion($sentencia);
@@ -103,6 +111,13 @@ function dataProductos($query){
             
             <button class='user__card--delete' type='button' onclick='DeleteProduct(". $fila['id'] .")'><i class='fa-solid fa-trash'></i></button>
         </div>";
+    }
+    return $template;
+}
+function OptionsUsuarios($query){
+    $template = "";
+    while($fila=mysqli_fetch_array($query)){
+        $template.= "<option value='".$fila['id_user']."'>".$fila['user_name']."</option>";
     }
     return $template;
 }
