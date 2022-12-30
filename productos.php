@@ -19,16 +19,16 @@ include("scripts/conexion.php");
         echo MostrarProductos();
         ?>
     </main>
-    <div id="addProduct" class="button__add__product">
+    <div id="add" class="button__add__product">
         <i class="fa-solid fa-plus"></i>
     </div>
-    <div class="modal">
+    <div id="modal" class="modal oculto">
         <div class="modal__form--container">
-            <div id="btn__close" class="btn__close">
-                <i class="fa-solid fa-circle-xmark"></i>
+            <div class="btn__close">
+                <i  id="btn__close" class="fa-solid fa-circle-xmark"></i>
             </div>
             <h2 class="Tittle__General">Añadir nuevo Producto</h2>
-            <form action="" class="modal__form">
+            <form action="" id="form__newProduct" class="modal__form">
                 <label for="nameProduct">
                     Nombre del producto:
                     <input type="text" name="Product" id="nameProduct" required placeholder="Product name">
@@ -54,7 +54,7 @@ include("scripts/conexion.php");
                     <input type="number" name="stock" id="stock" required min=0 value="0">
                 </label>
                 <div class="modal__form__btn--container">
-                    <input type="submit" value="Registrar" class="btn__loging">
+                    <input type="submit" value="Registrar" id="btnRegister" class="btn__loging">
                 </div>
                 
             </form>
@@ -64,4 +64,5 @@ include("scripts/conexion.php");
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/49b3e079cc.js" crossorigin="anonymous"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/buttons.js"></script>
 </html>

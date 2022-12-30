@@ -70,6 +70,13 @@ function EliminarProducto($id){
     return $res;
 }
 
+function addProducto($product,$user,$description,$price,$quantity){
+    $sentencia="INSERT INTO productos (id_user,nombre_producto,descripcion,precio,inventario) VALUES ('$user','$product','$description',$price,$quantity)";
+                //echo($sentencia);
+                $res = Conexion($sentencia);
+                //echo($res);
+                return $res;
+}
 function datauser($query){
     $template = "";
     while($fila=mysqli_fetch_array($query)){

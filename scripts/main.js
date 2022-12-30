@@ -8,17 +8,38 @@ console.log(User+ "-"+ps);
 }
 AjaxUSerSearch();*/
 const containerProducts = document.getElementById("productos");
+const register=document.getElementById("btnRegister");
+const formProduct = document.getElementById("form__newProduct");
 function DeleteProduct(id){
-    console.log(id);
+    //console.log(id);
     const datos={
         tabla:'producto',
         idElemento: id};
         $.ajax({
             type:"POST",
-            url:"scripts/delete.php",
+            url:"scripts/CRUD.php",
             data:datos,
             success: function(res){
                 containerProducts.innerHTML=res;               
             }
         });
 }
+register.addEventListener("click",function(){
+    var datos= $("#form__newProduct").serializeArray();
+    datos.push({name:'tabla', value:'newProduct'});
+    console.log(datos);
+    $.ajax({
+        type:"POST",
+        url:"scripts/CRUD.php",
+        data:datos,
+        success: function(res){
+            containerProducts.innerHTML=res;
+            //console.log(res);                   
+        }
+    });
+   
+});
+
+formProduct.addEventListener("submit",(e)=>{
+    e.preventDefault();
+});
