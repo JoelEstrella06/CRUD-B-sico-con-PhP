@@ -38,7 +38,7 @@ $contraseña=$_POST["password"];
                     <div class='dashboard__links'>
                         <a href='usuarios.php'><i class='fa-solid fa-users'></i> Usuarios</a>
                         <a href='productos.php'><i class='fa-solid fa-boxes-stacked'></i> Productos</a>
-                        <a href=''><i class='fa-solid fa-arrows-rotate'></i> Actualizar Producto</a>
+                        <a href='ProductUpdate.php'><i class='fa-solid fa-arrows-rotate'></i> Actualizar Producto</a>
                         <a href=''><i class='fa-solid fa-trash-can'></i> Eliminar Producto</a>
                     </div>                   
                 </div>

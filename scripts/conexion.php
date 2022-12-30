@@ -50,6 +50,13 @@ function   MostrarProductos(){
         return dataProductos($res);
     }
 }
+function ListarProductos(){
+    $sentencia = "SELECT * FROM productos";
+    $res = Conexion($sentencia);
+    if($res && mysqli_num_rows($res)>0){
+        return SelectProducto($res);
+    }
+}
 function SelectProducto($query)
 {
     $template = "";

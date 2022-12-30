@@ -54,7 +54,7 @@ include("scripts/conexion.php");
                     <input type="number" name="stock" id="stock" required min=0 value="0">
                 </label>
                 <div class="modal__form__btn--container">
-                    <input type="submit" value="Registrar" id="btnRegister" class="btn__loging">
+                    <input type="submit" value="Registrar" id="btnRegister" class="btn__loging" onclick="NewProduct()">
                 </div>
                 
             </form>
