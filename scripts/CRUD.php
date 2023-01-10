@@ -18,4 +18,8 @@ if ($type_table=="newProduct"){
     }
     //echo("new Product");
 }
+if($type_table=="updateProduct"){
+    $id=$_POST["id"];
+    echo BuscarProducto($id);
+}
 ?>

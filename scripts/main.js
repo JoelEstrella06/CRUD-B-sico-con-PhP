@@ -59,5 +59,16 @@ function NewProduct(){
 
 function UpdateProduct(){
     var productValue = document.getElementById("Producto").value;
-    console.log(productValue);
+    //console.log(productValue);
+    const datos={
+        tabla:'updateProduct',
+        id:productValue};
+        $.ajax({
+            type:"POST",
+            url:"scripts/CRUD.php",
+            data:datos,
+            success: function(res){
+                console.log(JSON.parse(res));               
+            }
+        });
 }

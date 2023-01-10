@@ -50,6 +50,24 @@ function   MostrarProductos(){
         return dataProductos($res);
     }
 }
+function BuscarProducto($id){
+    $sentencia = "SELECT * FROM productos WHERE id=$id";
+    $res = Conexion($sentencia);
+    $template="";
+    if($res && mysqli_num_rows($res)>0){       
+        while($fila=mysqli_fetch_array($res)){
+            $template ='{
+                "id":'.$fila['id'].',
+                "user_id":'.$fila['id_user'].',
+                "producto":"'.$fila['nombre_producto'].'",
+                "description":"'.$fila['descripcion'].'",
+                "price":'.$fila['precio'].',
+                "stock":'.$fila['inventario'].'
+            }';
+        }
+    }
+    return $template;
+}
 function ListarProductos(){
     $sentencia = "SELECT * FROM productos";
     $res = Conexion($sentencia);
@@ -136,8 +154,7 @@ function OptionsUsuarios($query){
     return $template;
 }
 function sum() {
-    $a=$_POST["a"];
-    $b=$_POST["b"];
-    return $a + $b;
+    $json = '{"nombre":"Juan","edad":30}';
+    return $json;
 }
 ?>
